@@ -14,7 +14,7 @@ def me():
     return json.dumps({'name': 'Lucas'})
 
 @app.route('/you/')
-def me():
+def you():
     return json.dumps({'name': 'Your Name'})
 
 if __name__ == "__main__":
