@@ -36,16 +36,18 @@ jobs:
       run: |
         pytest
 
-  build:
-    runs-on: ubuntu-latest
+  #build:
+  #  needs: test
+  #  runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      working-directory: src/restapi/
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+  #  steps:
+  #  - uses: actions/checkout@v3
+  #  - name: Build the Docker image
+  #    working-directory: src/restapi/
+  #    run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
   build-and-push-image:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: read
