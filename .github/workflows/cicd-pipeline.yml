@@ -85,7 +85,6 @@ jobs:
       - name: Run container on Actions Runner
         run: |
           docker run -d ghcr.io/0xfeff/githubcicdpipeline:main
-          curl 172.17.0.2:5000/me/
 
   deploy:
     needs: acceptance-test
