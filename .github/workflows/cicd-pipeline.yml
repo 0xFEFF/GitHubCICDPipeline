@@ -84,7 +84,7 @@ jobs:
     steps:
       - name: Run container on Actions Runner
         run: |
-          docker run -d ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          docker run -d ghcr.io/0xfeff/githubcicdpipeline:main
   
 
 
