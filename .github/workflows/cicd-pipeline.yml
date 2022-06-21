@@ -85,6 +85,19 @@ jobs:
       - name: Run container on Actions Runner
         run: |
           docker run -d ghcr.io/0xfeff/githubcicdpipeline:main
+          curl 172.17.0.2:5000/me/
+
+  deploy:
+    needs: acceptance-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Azure Container Instance
+        run: |
+          echo Login
+
+      - name: Deploy to Azure Container Instance
+        run: |
+          echo docker run -d ghcr.io/0xfeff/githubcicdpipeline:main
   
 
 
