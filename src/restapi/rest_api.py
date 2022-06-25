@@ -3,16 +3,19 @@
 
 import json 
 from flask import Flask
-from flask import jsonify
 
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return jsonify({'name': 'Alice'})
+    return json.dumps({'name': 'Alice'})
 
 @app.route('/me/')
 def me():
-    return jsonify({'name': 'Lucas'})
+    return json.dumps({'name': 'Lucas'})
+
+@app.route('/you/')
+def you():
+    return json.dumps({'name': 'Your Name'})
 
 if __name__ == "__main__":
     app.run(host="172.17.0.2", port=5000)
