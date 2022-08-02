@@ -35,7 +35,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-
+        git tag
   #build:
   #  needs: test
   #  runs-on: ubuntu-latest
